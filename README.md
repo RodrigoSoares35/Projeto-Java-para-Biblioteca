@@ -10,7 +10,7 @@
    - Rodrigo Soares.
 
 ## Objetivo do Software 🖋
-  - Gerenciar a uma Biblioteca comunitária
+  - Gerenciar uma Biblioteca Comunitária
 
 ## Funcionalidades do Sistema 
    (Requisitos Funcionais)
