@@ -1,13 +1,18 @@
-# Projeto Java Para Biblioteca
-## Status do projeto 
+# Projeto Java Para Biblioteca 📚
+
+## Status do Projeto 
    - Em Desenvolvimento.
-## Tecnologias que serão aplicadas
+
+## Tecnologias que Serão Aplicadas 💻
    - Java, Mysql, Git Bash.
-## Time de desenvolvedores
+
+## Time de Desenvolvedores 🙋‍♂️
    - Rodrigo Soares.
-## Objetivo do software 
+
+## Objetivo do Software 🖋
   - Gerenciar a uma Biblioteca comunitária
-## Funcionalidades do sistema 
+
+## Funcionalidades do Sistema 
    (Requisitos Funcionais)
    - Registrar os Titulos dos Livros.
    - Registrar os Usuários.
