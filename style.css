@@ -9,3 +9,27 @@
     object-fit: cover;
     
 }
+.login{
+    /*
+    margin-left: 30%;
+    margin-right: 30%;
+    align-items: center;
+    */
+    width: 30%;
+    margin-top: 10%;
+    font-size: 34px;
+    color:brown;
+   
+
+    
+    
+    
+}
+.centralizar {
+    display: flex;
+    justify-content: center;
+    /*
+    align-items: center;
+    text-align: center;
+    */
+}
