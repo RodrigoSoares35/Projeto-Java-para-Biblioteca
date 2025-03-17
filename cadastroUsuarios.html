@@ -25,7 +25,6 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
-
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">Menu</a>
@@ -37,14 +36,18 @@
                 <li><a class="dropdown-item" href="#">Cadastrar Emprestimos</a></li>
               </ul>
             </li>
-            <!--
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
-                  -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Menu</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Cadastrar Livros</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Cadastrar Emprestimos</a></li>
+              </ul>
+            </li>
+           
           </ul>
         </div>
       </div>
@@ -61,11 +64,11 @@
             <div class="thumbnail">
               <div class="mb-3 ">
                 <br>
-                <label for="nome" class="form-label">Nome:</label>
+                <label for="nome" class="form-label"><b>Nome:</b></label>
                 <input type="text" class="form-control" id="nome" placeholder="Nome Completo" required>
               </div>
               <div class="mb-3">
-                <label for="cpf" class="form-label">CPF:</label>
+                <label for="cpf" class="form-label"><b>CPF:</b></label>
                 <input type="text" class="form-control" id="cpf" required>
               </div>
             </div>
@@ -75,11 +78,11 @@
               <div class="caption">
                 <div class="mb-3 ">
                   <br>
-                  <label for="nome" class="form-label">Telefone</label>
+                  <label for="nome" class="form-label"><b>Telefone</b></label>
                   <input type="text" class="form-control" id="nome" placeholder="Ex:DDD-00000-0000" required>
                 </div>
                 <div class="mb-3 ">
-                  <label for="nome" class="form-label">Endereço:</label>
+                  <label for="nome" class="form-label"><b>Endereço:</b></label>
                   <input type="text" class="form-control" id="nome" placeholder="Endereço" required>
                 </div>
                
@@ -94,13 +97,13 @@
                 <div class="mb-3">
                   <br>
                   <div class="mb-3">
-                    <label for="dataNascimento" class="form-label">Data de Nascimento:</label>
+                    <label for="dataNascimento" class="form-label"><b>Data de Nascimento:</b></label>
                     <input type="date" class="form-control" id="dataNascimento" required>
                   </div>
                   <div class="mb-3">
                     <br>
                     <button type="submit" class="btn btn-primary mb-3"
-                    style="width: 10em; border-radius: 6em;">Salvar</button>
+                    style="width: 10em; border-radius: 6em;"><b>Salvar</b></button>
                   </div>
                 </div>
               </div>
@@ -108,10 +111,10 @@
       </form>
     </section>
     <br>
-    <h2>Cadastro de Usuários</h2>
+    <h2>Lista de Usuários</h2>
     <br>
     <section class="borde-margin">
-      <table class="table table-bordered border-primary table-warning" style="text-align: center; overflow: hidden; border-radius: 10px;"  >
+      <table class="table table-bordered border-black table-warning" style="text-align: center; overflow: hidden; border-radius: 10px;"  >
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -127,8 +130,8 @@
             <td>Rodrigo</td>
             <td>000.000.000-00</td>
             <td>81-00000-0000</td>
-            <th>24/02/1989</th>
-            <th>Rua do amor n°10 Olinda PE</th>
+            <td>24/02/1989</td>
+            <td>Rua do amor n°10 Olinda PE</td>
           </tr>
           <tr>
             <th></th>
