@@ -3,9 +3,16 @@
     margin: 0%;
     margin: 0%;
 };
-body{
-    background-color: bisque;
+:root{
+    --cor-primaria: #ADB2D4;
+    --cor-secundaria:#C7D9DD;
+    --cor-terciaria:#C7D9DD;
+    --cor-hover: #272727;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
 }
+
 .navbar{
     background-color: #e3f2fd;
 }
@@ -13,14 +20,14 @@ h2{
     text-align: center;
 }
 .borde-margin{
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 25%;
+    margin-right: 25%;
    
 }
 .row{
     border-style: solid;
      padding: 0.5%;
-     background-color:gray;
+     background-color: #C7D9DD ;
      border-radius: 10px;
 
 }

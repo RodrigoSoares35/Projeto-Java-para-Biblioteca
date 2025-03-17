@@ -10,7 +10,7 @@
   <title>Cadastro Usuários</title>
 </head>
 
-<body style="background-color: gray">
+<body style="background-color: #ADB2D4">
   <header>
     <!--style="background-color: #e3f2fd;"-->
     <nav class="navbar">
@@ -45,35 +45,33 @@
   <main>
     <!--Formulario-->
     <h2>Cadastro de Usuários</h2>
+    <br>
     <section class="borde-margin">
       <form action="" method="post">
         <div class="row" id="forms">
-          <div class="col-md-4">
+          <div class="col-md-12">
             <div class="thumbnail">
               <div class="mb-3 ">
-                <br>
                 <label for="nome" class="form-label"><b>Nome:</b></label>
                 <input type="text" class="form-control" id="nome" placeholder="Nome Completo" required>
               </div>
               <div class="mb-3">
                 <label for="cpf" class="form-label"><b>CPF:</b></label>
-                <input type="text" class="form-control" id="cpf" required>
+                <input type="text" class="form-control" id="cpf" placeholder="Ex: 000.000.000-00" required>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-12">
             <div class="thumbnail">
               <div class="caption">
                 <div class="mb-3 ">
-                  <br>
                   <label for="nome" class="form-label"><b>Telefone</b></label>
-                  <input type="text" class="form-control" id="nome" placeholder="Ex:DDD-00000-0000" required>
+                  <input type="text" class="form-control" id="nome" placeholder="Ex:(DDD) 00000-0000" required>
                 </div>
                 <div class="mb-3 ">
                   <label for="nome" class="form-label"><b>Endereço:</b></label>
                   <input type="text" class="form-control" id="nome" placeholder="Endereço" required>
                 </div>
-               
                 <div class="col-auto">
                 </div>
               </div>
@@ -83,13 +81,11 @@
             <div class="thumbnail">
               <div class="caption">
                 <div class="mb-3">
-                  <br>
                   <div class="mb-3">
                     <label for="dataNascimento" class="form-label"><b>Data de Nascimento:</b></label>
                     <input type="date" class="form-control" id="dataNascimento" required>
                   </div>
                   <div class="mb-3">
-                    <br>
                     <button type="submit" class="btn btn-primary mb-3"
                     style="width: 10em; border-radius: 6em;"><b>Salvar</b></button>
                   </div>
