@@ -21,12 +21,12 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">Livros</a>
+                      aria-expanded="false">Emprestimos</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="./cadastroLivros.html">Cadastrar</a></li>
+                      <li><a class="dropdown-item" href="./cadastroEmprestimo.html">Cadastrar</a></li>
                       <li>
                         <hr class="dropdown-divider">
-                        <li><a class="dropdown-item" href="./listaLivros.html">Lista de Usuários</a></li>
+                        <li><a class="dropdown-item" href="./listaEmprestimo.html">Lista de Emprestimos</a></li>
                       <li>
                         <hr class="dropdown-divider">
                       </li>
@@ -41,15 +41,15 @@
 
     </header>
     <main>
-        <h2>Atualizar ou Excluir Livros</h2>
+        <h2>Atualizar ou Excluir Emprestimos</h2>
         <section class="borde-margin">
             <form action="" method="post">
               <div class="row" id="forms">
                 <div class="col-md-6">
                   <div class="thumbnail">
                     <div class="mb-2 ">
-                      <label for="id" class="form-label"><b>Pesquisar por ID:</b></label>
-                      <input type="text" class="form-control" id="id" placeholder="Informe um ID" required>
+                      <label for="idEmprestimo" class="form-label"><b>Pesquisar por ID:</b></label>
+                      <input type="text" class="form-control" id="idEmprestimo" placeholder="Informe um ID" required>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary mb-1"
@@ -64,32 +64,28 @@
                     <div class="col-md-12">
                         <div class="thumbnail">
                             <div class="mb-3">
-                                <label for="livro" class="form-label"><b>Nome do Livro:</b></label>
-                                <input type="text" class="form-control" id="livro">
+                                <label for="idUsuario" class="form-label"><b>ID do Usuário:</b></label>
+                                <input type="text" class="form-control" id="idUsuario">
                             </div>
                             <div class="mb-3">
-                                <label for="autor" class="form-label"><b>Autor:</b></label>
-                                <input type="text" class="form-control" id="autor">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="thumbnail">
-                            <div class="mb-3">
-                                <label for="quantidade" class="form-label"><b>Quantidade</b></label>
-                                <input type="number" class="form-control" id="quantidade">
+                                <label for="nomeUsuario" class="form-label"><b>Nome do Usuário:</b></label>
+                                <input type="text" class="form-control" id="NomeUsuario">
                             </div>
                             <div class="mb-3">
-                                <label for="Categoria" class="form-label"><b>Categoria:</b></label>
-                                <input type="text" class="form-control" id="Categoria">
+                                <label for="nomeLivro" class="form-label"><b>Nome do Livro:</b></label>
+                                <input type="text" class="form-control" id="nomeLivro">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="thumbnail">
                             <div class="mb-3">
-                                <label for="localizacao" class="form-label"><b>Localização:</b></label>
-                                <input type="text" class="form-control" id="localizacao">
+                                <label for="dataEmprestimo" class="form-label"><b>Data do Emprestimos</b></label>
+                                <input type="date" class="form-control" id="dataEmprestimo">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dataEntrega" class="form-label"><b>Data da Entrega:</b></label>
+                                <input type="date" class="form-control" id="dataEntrega">
                             </div>
                         </div>
                     </div>
