@@ -4,7 +4,7 @@
    - Em Desenvolvimento.
 
 ## Tecnologias que Serão Aplicadas 💻
-   - Java, Mysql, Git Bash.
+   - Java, Mysql, Git Bash, Bootstrap
 
 ## Time de Desenvolvedores 🙋‍♂️
    - Rodrigo Soares.
