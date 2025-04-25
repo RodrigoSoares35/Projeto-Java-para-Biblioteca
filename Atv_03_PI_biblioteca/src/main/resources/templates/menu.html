@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link css e bootstrap  -->
+  <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/menu.css}" />
+  <title>Menu</title>
+</head>
+<body>
+  <header>
+    <img class="imagem" src="./img/biblioteca.jpg">
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Usuários</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./listaUsuario.html">Lista</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="./cadastroUsuarios.html">Cadastrar</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="./atualizarExcluirUsuario.html">Atualizar/Excluir</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Livros</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./listaLivros.html">Lista</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="cadastroLivros.html">Cadastrar</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="./atualizarExcluirLivros.html">Atualizar/Excluir</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Emprestimos</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./listaEmprestimo.html">Lista</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="./cadastroEmprestimo.html">Cadastrar</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="./atualizarExcluirEmprestimos.html">Atualizar/Excluir</a></li>
+              </ul>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="./index.html"><b>Sair</b></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="centralizar">
+    <section class="borde">
+      <div class="text">
+        <div>
+          <h2>Nossa Missão</h2>
+        </div>
+        <div>
+          <p>Nossa missão é promover o acesso ao conhecimento, à cultura e à educação por meio de um espaço acolhedor
+            e acessível para toda a comunidade. Acreditamos que a leitura e o aprendizado são ferramentas poderosas de
+            transformação social, capazes de ampliar horizontes e criar novas oportunidades para todas as pessoas.</p>
+        </div>
+        <div>
+          <p>Buscamos incentivar o hábito da leitura, estimular a troca de saberes e fortalecer os laços comunitários
+            por meio de atividades educativas, culturais e sociais. Nossa biblioteca é mais do que um acervo de livros:
+            é um ponto de encontro, um ambiente de inclusão e um catalisador de mudanças positivas.</p>
+        </div>
+        <div>
+          <p>Com o apoio de voluntários e parceiros, trabalhamos para construir um futuro onde o
+            conhecimento seja um direito de todos, contribuindo para uma sociedade mais justa, criativa e informada.</p>
+        </div>
+      </div>
+    </section>
+    <section class="borde">
+      <div class="text">
+        <div>
+          <h2>Nossos Valores</h2>
+        </div>
+        <div>
+          <p>📖 Acesso ao Conhecimento – Acreditamos que o saber deve ser acessível a todos, sem barreiras,
+            proporcionando oportunidades iguais para o crescimento pessoal e coletivo.</p>
+        </div>
+        <div>
+          <p>🤝 Inclusão e Diversidade – Valorizamos um ambiente acolhedor, onde todas as pessoas,
+            independentemente de sua origem, tenham voz e se sintam parte da comunidade.</p>
+        </div>
+        <div>
+          <p>❤️ Colaboração e Solidariedade – Nossa biblioteca é construída por e para a comunidade.
+            Incentivamos o espírito de cooperação, o voluntariado e a troca de saberes como forma de
+            fortalecimento coletivo.</p>
+        </div>
+        <div>
+          <p>📚 Amor pela Leitura e Cultura – Incentivamos o prazer pela leitura, o pensamento crítico e a criatividade,
+            proporcionando experiências enriquecedoras para todas as idades.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+ <!-- Link js e bootstrap   -->
+ <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+ <script th:src="@{/js/script.js}"></script>
+</body>
+</body>
+</html>

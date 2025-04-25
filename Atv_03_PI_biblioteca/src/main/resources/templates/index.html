@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link css e bootstrap  -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Biblioteca Social</title>
+</head>
+<body>
+    <header>
+        <img class="imagem" src="./img/biblioteca.jpg">
+    </header>
+    <main class="centralizar">
+        <section class="borde">
+            <form  class="login" method="post" onsubmit="return validarLogin()">
+            <div>
+                <h1>Biblioteca Social</h1>
+            </div>
+                <div class="mb-3 mt-3">
+                  <label for="usuario" class="form-label">Usuário:</label>
+                  <input type="text" class="form-control" id="usuario" placeholder="Usuário Admin" name="usuario" style="border: 1px solid black;">
+                </div>
+                <div class="mb-3">
+                  <label for="senha" class="form-label">Senha:</label>
+                  <input type="password" class="form-control" id="senha" placeholder="Senha Admin" name="pswd" style="border: 1px solid black;">
+                </div>
+                <div class="form-check mb-3">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" style="border: 1px solid black;"> Lembrar</label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 30%">Entrar</button>
+              </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Link js e bootstrap   -->
+    <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/app.js}"></script>
+    </body>
+</body>
+</html>
