@@ -19,16 +19,6 @@ public class LivroService {
         return livroRepository.save(livro);
     
     }
-     public List<Livro> listarTodosLivro() {
-    return livroRepository.findAll();
-
-    }
-      public Livro getLivroId(Integer livroId) {
-
-     return livroRepository.findById(livroId).orElseThrow(()
-     -> new ResourceNotFoundException("livro não encontrado " + livroId));
-
-    }
      public Livro atualizarLivro(Integer livroId, Livro livroRequest) {
 
         Livro livro = getLivroId(livroId);
@@ -45,5 +35,26 @@ public class LivroService {
         
         return livroRepository.save(livro);
 
+    }
+      public List<Livro> listarTodosLivro() {
+    return livroRepository.findAll();
+
+    }
+      public Livro getLivroId(Integer livroId) {
+
+     return livroRepository.findById(livroId).orElseThrow(()
+     -> new ResourceNotFoundException("livro não encontrado " + livroId));
+
+    }
+       public void deletarLivro(Integer livroId) {
+
+        Livro livro = getLivroId(livroId);
+
+        livroRepository.deleteById(livro.getId());
+
+    }
+
+    public List<Livro> getTodosLivro() {
+        return livroRepository.findAll();
     }
 }
