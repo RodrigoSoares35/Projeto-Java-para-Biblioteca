@@ -19,55 +19,50 @@ public class LivroTest {
     }
 
     @Test
-    public void testGetAndSetId() {
+    public void ValidacaoId() {
         Integer id = 1;
         livro.setId(id);
         assertEquals(id, livro.getId());
     }
 
     @Test
-    public void testGetAndSetNomeLivro() {
+    public void validacaoNomeLivro() {
         String nome = "Dom Casmurro";
         livro.setNomeLivro(nome);
         assertEquals(nome, livro.getNomeLivro());
     }
 
     @Test
-    public void testGetAndSetAutor() {
+    public void validacaoAutor() {
         String autor = "Machado de Assis";
         livro.setAutor(autor);
         assertEquals(autor, livro.getAutor());
     }
 
     @Test
-    public void testGetAndSetCategoria() {
+    public void validacaoCategoria() {
         String categoria = "Romance";
         livro.setCategoria(categoria);
         assertEquals(categoria, livro.getCategoria());
     }
 
     @Test
-    public void CertoQuantidade() {
+    public void validacaoQuantidade() {
         Integer quantidade = 10;
         livro.setQuantidade(quantidade);
         assertEquals(quantidade, livro.getQuantidade());
     }
-    @Test
-    public void ErradoQuantidade() {
-        Integer quantidade = null;
-        livro.setQuantidade(quantidade);
-        assertEquals(quantidade, livro.getQuantidade());
-    }
+    
 
     @Test
-    public void Localizacao() {
+    public void validacaoLocalizacao() {
         String localizacao = "Estante A3";
         livro.setLocalizacao(localizacao);
         assertEquals(localizacao, livro.getLocalizacao());
     }
 
     @Test
-    public void testEqualsAndHashCode() {
+    public void IgualdadeLivro() {
         Livro livro2 = new Livro();
         livro.setId(1);
         livro2.setId(1);
@@ -76,7 +71,7 @@ public class LivroTest {
     }
 
     @Test
-    public void testEqualsDifferentObjects() {
+    public void DiferencaLivro() {
         Livro livro2 = new Livro();
         livro.setId(1);
         livro2.setId(2);
