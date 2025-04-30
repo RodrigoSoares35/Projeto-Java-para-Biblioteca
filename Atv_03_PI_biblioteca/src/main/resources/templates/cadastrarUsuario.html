@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Link css e bootstrap  -->
   <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
   <link rel="stylesheet" th:href="@{/css/style.css}" />
-  <title>Cadastro de Livros</title>
+  <title>Cadastro Usuários</title>
 </head>
-
 <body style="background-color: #ADB2D4">
   <header>
     <nav class="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/menu}">Home</a>
+        <a class="navbar-brand" href="@{/menu}">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,13 +21,13 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Livros</a>
+                aria-expanded="false">Usuários</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" th:href="@{/listaLivro}">Lista de Livros</a></li>
+                <li><a class="dropdown-item" th:href="@{/listaUsuario}">Lista de Usuários</a></li>
                 <li>
-                 <hr class="dropdown-divider">
-                </li>    
-                 <li><a class="dropdown-item" th:href="@{/menu}">Voltar</a></li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" th:href="@{/menu}">Voltar</a></li>
               </ul>
             </li>
           </ul>
@@ -39,22 +37,22 @@
     <br>
   </header>
   <main>
-    <!--Formulario-->
-    <h2 style="text-align: center">Cadastro de Livros</h2>
+      <h2 style="text-align: center">Cadastro de Usuários</h2>
     <br>
-    <section>
-     <div style="max-width: 600px; margin: 0 auto;">
-      <form th:action="@{/salvarLivro}" th:object="${livro}" method="post">
+    <section> 
+    <div style="max-width: 600px; margin: 0 auto;">
+      <form th:action="@{/salvarUsuario}" th:object="${usuario}" method="post">
         <div class="row" id="forms">
           <div class="col-md-12">
             <div class="thumbnail">
               <div class="mb-3 ">
-                <label for="livro" class="form-label"><b>Nome do Livro:</b></label>
-                <input type="text" th:field="*{nomeLivro}" class="form-control" id="livro" placeholder="Nome do livro" required>
+                <label for="nome" class="form-label"><b>Nome Completo:</b></label>
+                <input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome Completo" required>
               </div>
               <div class="mb-3">
-                <label for="autor" class="form-label"><b>Autor:</b></label>
-                <input type="text" th:field="*{autor}" class="form-control" id="autor" placeholder="informe o autor" required>
+                <label for="cpf" class="form-label"><b>CPF:</b></label>
+                <input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="Ex: 000.000.000-00" required 
+                pattern ="[0-9]{3}[.][0-9]{3}[.][0-9]{3}-[0-9]{2}$">
               </div>
             </div>
           </div>
@@ -62,12 +60,13 @@
             <div class="thumbnail">
               <div class="caption">
                 <div class="mb-3 ">
-                  <label for="Quantidade" class="form-label"><b>Quantidade</b></label>
-                  <input type="number" th:field="*{quantidade}" class="form-control" id="Quantidade" placeholder="informe a quantidade" required>
+                  <label for="telefone" class="form-label"><b>Telefone</b></label>
+                  <input type="text" th:field="*{telefone}" class="form-control" id="telefone" placeholder="Ex: xx xxxxx-xxxx" required
+                   pattern ="[0-9]{2} [0-9]{4,6}-[0-9]{4}$"/>
                 </div>
                 <div class="mb-3 ">
-                  <label for="Categoria" class="form-label"><b>Categoria:</b></label>
-                  <input type="text" th:field="*{categoria}" class="form-control" id="Categoria" placeholder="informe uma Categoria" required>
+                  <label for="endereco" class="form-label"><b>Endereço:</b></label>
+                  <input type="text" th:field="*{endereco}" class="form-control" id="endereco" placeholder="Endereço" required>
                 </div>
                 <div class="col-auto">
                 </div>
@@ -79,30 +78,27 @@
               <div class="caption">
                 <div class="mb-3">
                   <div class="mb-3">
-                    <label for="localização" class="form-label"><b>Localização:</b></label>
-                    <input type="text" th:field="*{localizacao}" class="form-control" id="localização" placeholder="informe a localização"
-                      required>
+                    <label for="dataNascimento" class="form-label"><b>Data de Nascimento:</b></label>
+                    <input type="date" th:field="*{dataNascimento}"class="form-control" id="dataNascimento" required>
                   </div>
-                  <div class="mb-3">
+                  <div class="mb-3" >
                     <button type="submit" class="btn btn-primary mb-3"
-                      style="width: 10em; border-radius: 6em;"><b>Salvar</b></button>
+                    style="width: 10em; border-radius: 6em;"><b>Salvar</b></button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        </form>
-      </div>
-    </section>
+      </form>
+    </div>
+</section>  
   </main>
   <br>
-  <footer>
-    <h6 style="text-align: center">todos os direitos reservados RodrigoSoares@2025</h6>
+  <footer class="roda-pe">
+  <h6 style="text-align: center">todos os direitos reservados RodrigoSoares@2025</h6>
   </footer>
-   <!-- Link js e bootstrap   -->
+  <!-- Link js e bootstrap   -->
    <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
    <script th:src="@{/js/app.js}"></script>
 </body>
-
 </html>

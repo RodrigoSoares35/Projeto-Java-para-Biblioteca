@@ -1,7 +1,10 @@
 
 package com.atv03.PI.uc15.Biblioteca.Controller.Data;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UsuarioRepository {
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario,Integer> {
     
 }

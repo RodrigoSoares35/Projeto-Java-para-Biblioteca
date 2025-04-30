@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link css e bootstrap  -->
+     <!-- Link css e bootstrap  -->
     <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/lista.css}" />
+    <title>Lista de Usuários</title>
 </head>
 <body class="body">
     <header>
         <nav class="navbar">
             <div class="container-fluid">
-              <a class="navbar-brand" href="@{/menu}">Home</a>
+              <a class="navbar-brand" th:href="@{/menu}">Home</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,14 +21,13 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">Livros</a>
+                      aria-expanded="false">Usuários</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" th:href="@{/cadastrarLivro}">Cadastrar Livros</a></li>
+                      <li><a class="dropdown-item" th:href="@{/cadastrarUsuario}">Cadastrar Usuários</a></li>
                       <li>
                        <hr class="dropdown-divider">
                       </li>
-                       <li><a class="dropdown-item" th:href="@{/menu}">Voltar</a></li>
-                      <li>   
+                      <li><a class="dropdown-item" href="@{/menu}">Voltar</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -38,13 +38,13 @@
     </header>
     <main>
         <section>
-            <form  action="/pesquisar" method="get" >
+            <form  action="/pesquisarUsuario" method="get" >
               <div class="row" id="forms">
                 <div class="col-md-4">
                   <div class="thumbnail">
                     <div class="mb-2 ">
                       <label for="id" class="form-label"><b>Pesquisar por ID:</b></label>
-                      <input name="id" type="number" class="form-control" id="id" placeholder="Informe o ID do Livro" required>
+                      <input name="id" type="number" class="form-control" id="id" placeholder="Informe o ID do Usuario" required>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary mb-1"
@@ -52,51 +52,53 @@
                 </div>
             </form>
           </section>
-    <div class="container mt-5" th:if="${livro != null}">
-        <h2>Detalhes do Livro</h2>
-        <div class="card mt-3">
-          <div class="card-body">
-            <h5 class="card-title" th:text="'Título: ' + ${livro.nomeLivro}"></h5>
-            <p class="card-text" th:text="'Autor: ' + ${livro.autor}"></p>
-            <p class="card-text" th:text="'categoria: ' + ${livro.categoria}"></p>
-            <p class="card-text" th:text="'quantidade: ' + ${livro.quantidade}"></p>
-            <p class="card-text" th:text="'localizacao: ' + ${livro.localizacao}"></p>
-          </div>
+          <div class="container mt-5" th:if="${usuario != null}">
+            <h2>Detalhes do Usuário</h2>
+            <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title" th:text="'Nome: ' + ${usuario.nome}"></h5>
+                <p class="card-text" th:text="'Cpf: ' + ${usuario.cpf}"></p>
+                <p class="card-text" th:text="'Telefone: ' + ${usuario.telefone}"></p>
+                <p class="card-text" th:text="'Endereco: ' + ${usuario.endereco}"></p>
+                <p class="card-text" th:text="'Data Nasc: ' + ${usuario.dataNascimento}"></p>
+              </div>
+            </div>
         </div>
-   </div>
-    <h2>Lista de Livros</h2>
+    </section>
+    <h2>Lista de Usuários</h2>
     <br>
     <section style="max-width: 90%; margin: 0 auto;">
        <table class="table table-bordered border-black" style="text-align: center; "  >
            <thead>
                 <tr>
                    <th scope="col">ID</th>
-                   <th scope="col">Nome do Livro</th>
-                   <th scope="col">Autor</th>
-                   <th scope="col">Categoria</th>
-                   <th scope="col">Quantidade</th>
-                   <th scope="col">Localização</th>
+                   <th scope="col">Nome do Usuário</th>
+                   <th scope="col">Cpf</th>
+                   <th scope="col">Telefone</th>
+                   <th scope="col">Endereço</th>
+                   <th scope="col">Data Nascimento</th>
                    <th scope="col">Atualizar</th>
                    <th scope="col">Excluir</th>
                 </tr>
             </thead>
-                    <tr th:each="l : ${listarLivro}">
-                    <td th:text="${l.id}"></td>
-                    <td th:text="${l.nomeLivro}"></td>
-                    <td th:text="${l.autor}"></td>
-                    <td th:text="${l.categoria}"></td>
-                    <td th:text="${l.quantidade}"></td>
-                    <td th:text="${l.localizacao}"></td>
-                    <td><a th:href="@{/atualizarLivroForm/{id}(id=${l.id})}" class="btn btn-primary">✔</a></td> 
-                    <td><a th:href="@{/deletarLivro/{id}(id=${l.id})}" class="btn btn-danger">❌</a></td>
+                    <tr th:each="u : ${listarUsuario}">
+                    <td th:text="${u.id}"></td>
+                    <td th:text="${u.nome}"></td>
+                    <td th:text="${u.cpf}"></td>
+                    <td th:text="${u.telefone}"></td>
+                    <td th:text="${u.endereco}"></td>
+                    <td th:text="${u.dataNascimento}"></td>
+                    <td><a th:href="@{/atualizarUsuarioForm/{id}(id=${u.id})}" class="btn btn-primary">✔</a></td> 
+                    <td><a th:href="@{/deletarUsuario/{id}(id=${u.id})}" class="btn btn-danger">❌</a></td>
                 </tr>
        </table>
     </section>
     </main>
+    <br>
     <footer class="roda-pe">
         <h6>todos os direitos reservados RodrigoSoares@2025</h6>
     </footer>
-     <!-- Link js e bootstrap   -->
+   <!-- Link js e bootstrap   -->
     <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
     <script th:src="@{/js/app.js}"></script>
 </body>

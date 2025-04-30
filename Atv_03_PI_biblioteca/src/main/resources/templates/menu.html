@@ -13,7 +13,7 @@
     <img class="imagem" src="./img/biblioteca.jpg">
     <nav class="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="@{/menu}">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,25 +28,19 @@
                    <hr class="dropdown-divider">
                    </li>
                    <li><a class="dropdown-item" th:href="@{/cadastrar}">Cadastrar</a></li>
-                   <li>
+                 </ul>
                 </li>
-            <!--
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">Usuários</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./listaUsuario.html">Lista</a></li>
+                <li><a class="dropdown-item" th:href="@{/listaUsuario}">Lista</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="./cadastroUsuarios.html">Cadastrar</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="./atualizarExcluirUsuario.html">Atualizar/Excluir</a></li>
+                <li><a class="dropdown-item" th:href="@{/cadastrarUsuario}">Cadastrar</a></li>
               </ul>
             </li>
-           
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">Emprestimos</a>
@@ -58,16 +52,10 @@
                 <li><a class="dropdown-item" href="#">Cadastrar</a></li>
                 <li>
                   <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="./atualizarExcluirEmprestimos.html">Atualizar/Excluir</a></li>
+                </li> 
               </ul>
             </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="./index.html"><b>Sair</b></a></li>
           </ul>
-          -->
         </div>
       </div>
     </nav>

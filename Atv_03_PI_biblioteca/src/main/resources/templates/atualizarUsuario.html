@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link css e bootstrap  -->
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <title>Atualizar Usuário</title>
+</head>
+<body style="background-color: #ADB2D4">
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand" th:href="@{/menu}">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">Usuários</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" th:href="@{/cadastrarUsuario}">Cadastrar</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                        <li><a class="dropdown-item" th:href="@{/cadastrarUsuario}">Lista de Usuários</a></li>
+                        <li>
+                         <hr class="dropdown-divider">
+                        </li>     
+                         <li><a class="dropdown-item" th:href="@{/menu}">Voltar</a></li>
+                     </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <h2 class="text-center">Atualizar Usuários</h2>
+        <section>
+            <div style="max-width: 600px; margin: 0 auto;">
+            <form th:action="@{/salvarUsuario}" th:object="${usuario}" method="post">
+                <div class="row" id="forms">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <div class="thumbnail">
+                                <div class="mb-3 ">
+                                    <label for="id" class="form-label"><b>ID:</b></label>
+                                    <input type="text" th:field="*{id}"class="form-control" id="ID" readonly>
+                                </div>
+                            <div class="mb-3">
+                                <label for="nome" class="form-label"><b>Nome Completo:</b></label>
+                                <input type="text" th:field="*{nome}" class="form-control" id="nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cpf" class="form-label"><b>CPF:</b></label>
+                                <input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="Ex: 000.000.000-00" required 
+                                pattern ="[0-9]{3}[.][0-9]{3}[.][0-9]{3}-[0-9]{2}$">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label"><b>Telefone</b></label>
+                                <input type="text" th:field="*{telefone}" class="form-control" id="telefone" placeholder="Ex: xx xxxxx-xxxx" required
+                                 pattern ="[0-9]{2} [0-9]{4,6}-[0-9]{4}$">
+                            </div>
+                            <div class="mb-3">
+                                <label for="endereco" class="form-label"><b>Endereço:</b></label>
+                                <input type="text"  th:field="*{endereco}"class="form-control" id="endereco">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail">
+                            <div class="mb-3">
+                                <label for="dataNascimento" class="form-label"><b>Data de Nascimento:</b></label>
+                                <input type="date"  th:field="*{dataNascimento}" class="form-control" id="dataNascimento" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center gap-3 mt-3">
+                        <button type="submit" class="btn btn-primary" style="width: 10em; border-radius: 6em;"><b>Atualizar</b></button>
+                    </div>
+                </div>
+            </form>
+           </div>     
+        </section>
+    </main>
+    <br>
+    <footer class="roda-pe">
+        <h6 style="text-align:center">todos os direitos reservados RodrigoSoares@2025</h6>
+    </footer>
+   <!-- Link js e bootstrap   -->
+        <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script th:src="@{/js/app.js}"></script>
+</body>
+</html>

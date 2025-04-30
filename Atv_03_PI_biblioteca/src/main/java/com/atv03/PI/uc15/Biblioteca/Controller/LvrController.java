@@ -31,7 +31,7 @@ public class LvrController {
         return "redirect:/listaLivro";
     }
 
-    @GetMapping("/cadastrar")
+    @GetMapping("/cadastrarLivro")
     public String mostrarFormularioCadastro(Model model) {
         model.addAttribute("livro", new Livro());
         return "cadastrarLivro";
