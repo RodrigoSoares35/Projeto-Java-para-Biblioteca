@@ -6,7 +6,7 @@
   <!-- Link css e bootstrap  -->
   <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
   <link rel="stylesheet" th:href="@{/css/style.css}" />
-  <title>Cadastro Usuários</title>
+  <title>Cadastro de Emprestimos</title>
 </head>
 <body style="background-color: #ADB2D4">
   <header>
@@ -21,12 +21,11 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">Usuários</a>
+                aria-expanded="false">Emprestimos</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" th:href="@{/listaUsuario}">Lista de Usuários</a></li>
+                <li><a class="dropdown-item" th:href="@{/listaEmprestimo}">Lista de Emprestimos</a></li>
                 <li>
                   <hr class="dropdown-divider">
-                </li>
                 <li><a class="dropdown-item" th:href="@{/menu}">Voltar</a></li>
               </ul>
             </li>
@@ -37,22 +36,26 @@
     <br>
   </header>
   <main>
-      <h2 style="text-align: center">Cadastro de Usuários</h2>
+    <!--Formulario-->
+    <h2 style="text-align: center">Cadastro de Emprestimo</h2>
     <br>
-    <section> 
-    <div style="max-width: 600px; margin: 0 auto;">
-      <form th:action="@{/salvarUsuario}" th:object="${usuario}" method="post">
+    <section>
+        <div style="max-width: 600px; margin: 0 auto;">
+      <form th:action="@{/salvarEmprestimo}" th:object="${emprestimo}" method="post">
         <div class="row" id="forms">
           <div class="col-md-12">
             <div class="thumbnail">
+                <div class="mb-3 ">
+                    <label for="IdUsuario" class="form-label"><b>ID do Usuário:</b></label>
+                    <input type="number" th:field="*{idUsuario}" class="form-control" id="IdUsuario" placeholder="ID do Usuário" required>
+                  </div>
               <div class="mb-3 ">
-                <label for="nome" class="form-label"><b>Nome Completo:</b></label>
-                <input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome Completo" required>
+                <label for="nomeUsuario" class="form-label"><b>Nome Completo:</b></label>
+                <input type="text" th:field="*{nomeUsuario}"  class="form-control" id="nomeUsuario" placeholder="Nome Completo" required>
               </div>
               <div class="mb-3">
-                <label for="cpf" class="form-label"><b>CPF:</b></label>
-                <input type="text" th:field="*{cpf}" class="form-control" id="cpf" placeholder="Ex: 000.000.000-00" required 
-                pattern ="[0-9]{3}[.][0-9]{3}[.][0-9]{3}-[0-9]{2}$">
+                <label for="titulo" class="form-label"><b>Titulo:</b></label>
+                <input type="text" th:field="*{titulo}" class="form-control" id="titulo" placeholder="informe o Titulo" required>
               </div>
             </div>
           </div>
@@ -60,13 +63,12 @@
             <div class="thumbnail">
               <div class="caption">
                 <div class="mb-3 ">
-                  <label for="telefone" class="form-label"><b>Telefone</b></label>
-                  <input type="text" th:field="*{telefone}" class="form-control" id="telefone" placeholder="Ex: xx xxxxx-xxxx" required
-                   pattern ="[0-9]{2} [0-9]{4,6}-[0-9]{4}$"/>
+                  <label for="dataEmprestimo" class="form-label"><b>Data do Emprestimos</b></label>
+                  <input type="date" th:field="*{dataEmprestimo}"  class="form-control" id="dataEmprestimo" required>
                 </div>
                 <div class="mb-3 ">
-                  <label for="endereco" class="form-label"><b>Endereço:</b></label>
-                  <input type="text" th:field="*{endereco}" class="form-control" id="endereco" placeholder="Endereço" required>
+                  <label for="dataEntrega" class="form-label"><b>Data da Entrega:</b></label>
+                  <input type="date" th:field="*{dataEntrega}" class="form-control" id="dataEntrega">
                 </div>
                 <div class="col-auto">
                 </div>
@@ -78,27 +80,21 @@
               <div class="caption">
                 <div class="mb-3">
                   <div class="mb-3">
-                    <label for="dataNascimento" class="form-label"><b>Data de Nascimento:</b></label>
-                    <input type="date" th:field="*{dataNascimento}"class="form-control" id="dataNascimento" required>
-                  </div>
-                  <div class="mb-3" >
                     <button type="submit" class="btn btn-primary mb-3"
                     style="width: 10em; border-radius: 6em;"><b>Salvar</b></button>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
       </form>
-    </div>
-</section>  
+     </div>       
   </main>
   <br>
   <footer class="roda-pe">
   <h6 style="text-align: center">todos os direitos reservados RodrigoSoares@2025</h6>
   </footer>
-  <!-- Link js e bootstrap   -->
+</body>
+   <!-- Link js e bootstrap   -->
    <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
    <script th:src="@{/js/app.js}"></script>
-</body>
 </html>

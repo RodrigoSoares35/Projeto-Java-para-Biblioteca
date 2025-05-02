@@ -6,6 +6,7 @@
     <!-- Link css e bootstrap  -->
     <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/lista.css}" />
+    <title>Lista de Emprestimos</title>
 </head>
 <body class="body">
     <header>
@@ -20,14 +21,13 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">Livros</a>
+                      aria-expanded="false">Emprestimos</a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" th:href="@{/cadastrarLivro}">Cadastrar Livros</a></li>
+                      <li><a class="dropdown-item" th:href="@{/cadastroEmprestimo}">Cadastrar</a></li>
                       <li>
-                       <hr class="dropdown-divider">
+                      <hr class="dropdown-divider">
                       </li>
-                       <li><a class="dropdown-item" th:href="@{/menu}">Voltar</a></li>
-                      <li>   
+                      <li><a class="dropdown-item" th:href="@{/menu}">Voltar</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -37,72 +37,77 @@
           <br>
     </header>
     <main>
+        <!--class="col-md-4"-->
         <section>
-            <form  action="/pesquisar" method="get" >
+            <center>
+            <form  action="/pesquisarEmprestimo" method="get" >
               <div class="row" id="forms">
-                <div class="col-md-4">
+                <div class="d-flex align-items-end gap-2">
                   <div class="thumbnail">
                     <div class="mb-2 ">
                       <label for="id" class="form-label"><b>Pesquisar por ID:</b></label>
-                      <input name="id" type="number" class="form-control" id="id" placeholder="Informe o ID do Livro" required>
+                      <input name="id" type="number" class="form-control" id="id" placeholder="ID do Emprestimo" required>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary mb-1"
-                  style="width: 25%; border-radius: 5px;"><b>Buscar</b></button>
+                  style="width: 15%; border-radius: 5px;"><b>Buscar</b></button>
                 </div>
             </form>
+            </center>
           </section>
-    <div class="container mt-5" th:if="${livro != null}">
+    <div class="container mt-5" th:if="${emprestimo != null}">
         <h2>Detalhes do Livro</h2>
         <div class="card mt-3">
           <div class="card-body">
-            <h5 class="card-title" th:text="'Título: ' + ${livro.nomeLivro}"></h5>
-            <p class="card-text" th:text="'Autor: ' + ${livro.autor}"></p>
-            <p class="card-text" th:text="'categoria: ' + ${livro.categoria}"></p>
-            <p class="card-text" th:text="'quantidade: ' + ${livro.quantidade}"></p>
-            <p class="card-text" th:text="'localizacao: ' + ${livro.localizacao}"></p>
+            <h5 class="card-title" th:text="'ID Usuario: ' + ${emprestimo.idUsuario}"></h5>
+            <p class="card-text" th:text="'Nome: ' + ${emprestimo.nomeUsuario}"></p>
+            <p class="card-text" th:text="'Titulo: ' + ${emprestimo.titulo}"></p>
+            <p class="card-text" th:text="'Data do Emprestimo: ' + ${emprestimo.dataEmprestimo}"></p>
+            <p class="card-text" th:text="'Data da Entraga: ' + ${emprestimo.dataEntrega}"></p>
           </div>
         </div>
    </div>
-    <h2>Lista de Livros</h2>
+    <h2>Lista de Emprestimos</h2>
     <br>
     <section style="max-width: 90%; margin: 0 auto;">
        <table class="table table-bordered border-black" style="text-align: center; "  >
            <thead>
                 <tr>
-                   <th scope="col">ID</th>
-                   <th scope="col">Nome do Livro</th>
-                   <th scope="col">Autor</th>
-                   <th scope="col">Categoria</th>
-                   <th scope="col">Quantidade</th>
-                   <th scope="col">Localização</th>
+                   <th scope="col">ID Emprestimo</th>
+                   <th scope="col">ID do Usuário</th>
+                   <th scope="col">Nome</th>
+                   <th scope="col">Titulo</th>
+                   <th scope="col">Data Emprestimo</th>
+                   <th scope="col">Data Entrega</th>
                    <th scope="col">Atualizar</th>
                    <th scope="col">Excluir</th>
                 </tr>
             </thead>
-                    <tr th:each="l : ${listarLivro}">
-                    <td th:text="${l.id}"></td>
-                    <td th:text="${l.nomeLivro}"></td>
-                    <td th:text="${l.autor}"></td>
-                    <td th:text="${l.categoria}"></td>
-                    <td th:text="${l.quantidade}"></td>
-                    <td th:text="${l.localizacao}"></td>
-                    <td><a th:href="@{/atualizarLivroForm/{id}(id=${l.id})}" class="btn btn-primary">✔</a></td>
-                    <td> <a th:href="@{/deletarLivro/{id}(id=${l.id})}"class="btn btn-danger" onclick="return confirmarExclusao();">❌</a></td>
+                    <tr th:each="e : ${listarEmprestimo}">
+                    <td th:text="${e.id}"></td>
+                    <td th:text="${e.idUsuario}"></td>
+                    <td th:text="${e.nomeUsuario}"></td>
+                    <td th:text="${e.titulo}"></td>
+                    <td th:text="${e.dataEmprestimo}"></td>
+                    <td th:text="${e.dataEntrega}"></td>
+                    <td><a th:href="@{/atualizarEmprestimoForm/{id}(id=${e.id})}" class="btn btn-primary">✔</a></td>
+                    <td> <a th:href="@{/deletarEmprestimo/{id}(id=${e.id})}"class="btn btn-danger" onclick="return confirmarExclusao();">❌</a></td>
                 </tr>
        </table>
     </section>
     </main>
+    <br>
     <footer class="roda-pe">
         <h6>todos os direitos reservados RodrigoSoares@2025</h6>
     </footer>
-     <!-- Link js e bootstrap   -->
+        <!-- Link js e bootstrap   -->
     <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
     <script>
     function confirmarExclusao() {
         
-        return confirm("Tem certeza que deseja excluir este livro?");
+        return confirm("Tem certeza que deseja excluir este Emprestimo?");
     }
   </script>
+   
 </body>
 </html>
