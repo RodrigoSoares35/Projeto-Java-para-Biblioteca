@@ -1,9 +1,4 @@
-/*
-function telaMenu() {
-    window.location.href = "/menu";
-   
-}
-*/
+
 // Validação de Usuário e senha
 const USUARIO_CORRETO = "Admin";
 const SENHA_CORRETA = "Admin";
@@ -35,11 +30,7 @@ function validarLogin() {
     }
 }
 
-// Função chamada ao clicar no botão de login
-/*
-function fazerLogin(event) {
-    if (!validarLogin()) {
-        event.preventDefault(); 
-    }
-}
-*/
+ 
+    window.confirmarExclusao = function () {
+    return confirm("Tem certeza que deseja excluir este livro?");
+};

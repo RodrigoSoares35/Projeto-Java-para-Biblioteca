@@ -89,7 +89,7 @@
                     <td th:text="${u.endereco}"></td>
                     <td th:text="${u.dataNascimento}"></td>
                     <td><a th:href="@{/atualizarUsuarioForm/{id}(id=${u.id})}" class="btn btn-primary">✔</a></td> 
-                    <td><a th:href="@{/deletarUsuario/{id}(id=${u.id})}" class="btn btn-danger">❌</a></td>
+                    <td><a th:href="@{/deletarUsuario/{id}(id=${u.id})}" class="btn btn-danger" onclick="return confirmarExclusao();">❌</a></td>
                 </tr>
        </table>
     </section>
@@ -100,6 +100,11 @@
     </footer>
    <!-- Link js e bootstrap   -->
     <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
-    <script th:src="@{/js/app.js}"></script>
+    <script>
+    function confirmarExclusao() {
+        
+        return confirm("Tem certeza que deseja excluir este Usuário?");
+    }
+  </script>
 </body>
 </html>
